@@ -6,7 +6,6 @@ binary_search() {
     sorted_array=("$@")
     low=0
     high="$((${#sorted_array[@]}-1))"
-    return_index=-1
     while [ $low -le $high ] ; do
         mid="$(( ($low+$high)/2 ))"
         mid=${mid%.*}
