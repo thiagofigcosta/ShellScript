@@ -25,4 +25,11 @@ array=(1 2 4 8 16 32 64 128)
 search=4
 
 binary_search $search ${array[@]}
-echo $found_idx
+echo "Array: ${array[@]}"
+if [ $found_idx -ge "0" ]; then
+    echo "Found $search on index $found_idx"
+    array=( "${array[@]:0:$((found_idx))}" "${array[@]:$((found_idx+1))}" )
+else
+    echo "Not found"
+fi
+echo "Array w/o el: ${array[@]}"
