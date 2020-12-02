@@ -2,7 +2,7 @@
 
 start=$(date +%s%3N)
 
-function msToHumanReadable {
+msToHumanReadable() {
   local T=$1
   shift
   local D=$((T/1000/60/60/24))
